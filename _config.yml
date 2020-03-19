@@ -9,3 +9,4 @@ plugins:
 permalink: pretty
 sass:
   sourcemap: never
+theme: jekyll-theme-cayman
