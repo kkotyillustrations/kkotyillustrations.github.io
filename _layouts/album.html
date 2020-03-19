@@ -1,0 +1,31 @@
+{% include header.html %}
+
+<main role="main" class="container">
+  {{ content }}
+  {% assign title = page.title | downcase %}
+  <div class="container">
+    <div class="row">
+      {% for post in site.categories[title] %}
+      <div class="col-md-6 col-xl-4 d-flex px-0">
+        <figure class="imghvr-fade m-2 shadow rounded">
+          <img data-src="{{ site.baseurl }}/assets/images/{{ post.image_url }}" class="img-fluid lazy" alt="{{ post.title }}"
+            src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzUwIiBoZWlnaHQ9IjM1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB4PSIyIiB5PSIyIiB3aWR0aD0iMzQ2IiBoZWlnaHQ9IjM0NiIgc3R5bGU9ImZpbGw6I2RlZGVkZTtzdHJva2U6I2RlZGVkZTtzdHJva2Utd2lkdGg6MiIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LXNpemU9IjE4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBhbGlnbm1lbnQtYmFzZWxpbmU9Im1pZGRsZSIgZm9udC1mYW1pbHk9Im1vbm9zcGFjZSwgc2Fucy1zZXJpZiIgZmlsbD0iI2RlZGVkZSI+MzUwJiMyMTU7MzUwPC90ZXh0Pjwvc3ZnPg==">
+          <figcaption>
+            <h5>{{ post.title }}</h5>
+            <br>
+            <span>{{ post.short_desc }}</span>
+            <br>
+            <br>
+            <span><strong>Date:</strong> {{ post.date | date: '%B %d, %Y' }}</span>
+            <br>
+            <span><strong>Mediums:</strong> <span class="text-capitalize">{{ post.categories | join: ', ' }}</span></span>
+          </figcaption>
+            <a href="{{ site.baseurl }}{{ post.url }}"></a>
+          </figure>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</main>
+
+{% include footer.html %}

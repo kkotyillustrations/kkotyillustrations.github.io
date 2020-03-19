@@ -1,0 +1,11 @@
+{::options parse_block_html="true" /}
+<figure class="d-none d-md-block d-lg-block d-xl-block">
+{{ page.contact_name }} - [{{ page.contact_phone }}](tel://{{ page.contact_phone }}) - [{{ page.contact_email }}](mailto://{{ page.contact_email }}) - <a href="{{ page.contact_instagram }}"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+</figure>
+
+{::options parse_block_html="true" /}
+<figure class="d-md-none">
+{{ page.contact_name }} - [{{ page.contact_phone }}](tel://{{ page.contact_phone }})
+
+[{{ page.contact_email }}](mailto://{{ page.contact_email }}) - <a href="{{ page.contact_instagram }}"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+</figure>

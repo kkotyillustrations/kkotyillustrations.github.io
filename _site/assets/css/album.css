@@ -1,0 +1,3 @@
+.imghvr-fade figcaption { background: rgba(0, 0, 0, 0.5); }
+
+[class^='imghvr-'], [class*=' imghvr-'] { background: none; }

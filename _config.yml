@@ -1,0 +1,11 @@
+# the title of your website
+title: kkotyillustrations
+
+# technical options
+url: https://kkotyillustrations.com/
+baseurl:
+plugins:
+  - jekyll-feed
+permalink: pretty
+sass:
+  sourcemap: never

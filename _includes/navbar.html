@@ -1,0 +1,26 @@
+{% if page.navbar_style %}
+<nav class="navbar navbar-expand-md {{ page.navbar_style }} fixed-top" id="navbar">
+{% else %}
+<nav class="navbar navbar-expand-md navbar-light fixed-top" id="navbar">
+{% endif %}
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  {% if page.navbar_logo %}
+  <img width="30" height="30" class="mx-2 my-1" src="{{ site.baseurl }}/assets/images/{{ page.navbar_logo }}" alt="Navbar logo">
+  {% else %}
+  <img width="30" height="30" class="mx-2 my-1" src="{{ site.baseurl }}/assets/images/navbar-logo-black.png" alt="Navbar logo">
+  {% endif %}
+  <div class="collapse navbar-collapse" id="navbarCollapse">
+    <ul class="navbar-nav mr-auto">
+      {% assign navbar_pages = (site.pages | sort: 'navbar_order') %}
+      {% for navbar_page in navbar_pages %}
+      {% if navbar_page.navbar == true %}
+      <li class="nav-item {% if page.title == navbar_page.title %}active{% endif %}">
+        <a class="nav-link" href="{{ site.baseurl }}{{ navbar_page.url }}">{{ navbar_page.title }}</a>
+      </li>
+      {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+</nav>

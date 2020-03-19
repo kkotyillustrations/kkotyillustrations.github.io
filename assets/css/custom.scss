@@ -1,0 +1,38 @@
+---
+---
+
+@import "bootstrap/bootstrap";
+@import "imagehover/imagehover";
+
+html, body {
+  font-family: 'Libre Baskerville', serif;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  padding-top: 4rem;
+}
+
+// hide content under transparent navbar
+.navbar {
+  width: 100%;
+  position: fixed;
+  z-index: 10;
+  background: inherit;
+  overflow: hidden;
+}
+
+// hide content under transparent navbar
+main {
+  width: 100%;
+  z-index: 5;
+  overflow: auto;
+}
+
+.navbar-toggler {
+  border: none !important;
+}

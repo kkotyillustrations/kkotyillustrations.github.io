@@ -1,0 +1,59 @@
+{% include header.html %}
+
+<main role="main" class="container">
+  
+  <!-- Obtain next and previous post within same category based on this posts first cateogry -->
+  {% assign cat = page.categories[0] %}
+  {% for post in site.categories[cat] %}
+    {% if post.url == page.url %}
+      {% assign post_index0 = forloop.index0 %}
+      {% assign post_index1 = forloop.index %}
+    {% endif %}
+  {% endfor %}
+  {% for post in site.categories[cat] %}
+    {% if post_index0 == forloop.index %}
+      {% assign next_post = post %}
+    {% endif %}
+    {% if post_index1 == forloop.index0 %}
+      {% assign prev_post = post %}
+    {% endif %}
+  {% endfor %}
+
+  <h4>
+    {% if prev_post %}
+    <a class="text-dark" href="{{ site.baseurl }}{{ prev_post.url }}"><i class="fas fa-angle-double-left fa-sm"></i></a>
+    {% else %}
+    <i class="fas fa-angle-double-left fa-sm text-muted"></i>
+    {% endif %}
+
+    {{ page.title }}
+
+    {% if next_post %}
+    <a class="text-dark" href="{{ site.baseurl }}{{ next_post.url }}"><i class="fas fa-angle-double-right fa-sm"></i></a>
+    {% else %}
+    <i class="fas fa-angle-double-right fa-sm text-muted"></i>
+    {% endif %}
+  </h4>
+
+  <p>
+    <span><strong>Date:</strong> {{ page.date | date: '%B %d, %Y' }}</span>
+    <br>
+    <span><strong>Mediums:</strong> <span class="text-capitalize">{{ page.categories | join: ', ' }}</span></span>
+  </p>
+
+  <!-- <p class="d-none d-md-block d-lg-block d-xl-block"><strong>Date:</strong> {{ page.date | date: '%B %d, %Y' }} | <strong>Mediums:</strong> <span class="text-capitalize">{{ page.categories | join: ', ' }}</span></p>
+  <p class="d-md-none"><strong>Date:</strong> {{ page.date | date: '%B %d, %Y' }}</p>
+  <p class="d-md-none"><strong>Mediums:</strong> <span class="text-capitalize">{{ page.categories | join: ', ' }}</span></p> -->
+
+  <div class="p-0 col-lg-8 float-lg-left mr-4">
+    <a href="{{ site.baseurl }}/assets/images/{{ page.image_url }}">
+      <img src="{{ site.baseurl }}/assets/images/{{ page.image_url }}" class="img-fluid" alt="{{ page.title }}">
+    </a>
+  </div>
+  <figure class="m-0"><p class="d-lg-none d-xl-none"></p></figure>
+  
+  {{ content }}
+
+</main>
+
+{% include footer.html %}
