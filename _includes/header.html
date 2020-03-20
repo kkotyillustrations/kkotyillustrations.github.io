@@ -9,13 +9,15 @@
     {% if page.custom_css %}<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/{{ page.custom_css }}">{% endif %}
     <link rel="icon" type="image/png" href="{{ site.baseurl }}/assets/images/favicon.png">
     {% if page.no_title %}<title>{{ site.title }}</title>{% else %}<title>{{ site.title }} | {{ page.title }}</title>{% endif %}
-    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-160689871-1"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161404212-1"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'UA-160689871-1');
-    </script> -->
+
+      gtag('config', 'UA-161404212-1');
+    </script>
   </head>
   {% if page.background_image %}
   <body style="background: url({{ site.baseurl }}/assets/images/{{ page.background_image }}) no-repeat center center fixed; color: {{ page.text_color | default: 'black' }};">
