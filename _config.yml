@@ -1,5 +1,12 @@
-# the title of your website
 title: kkotyillustrations
+tagline: Artistically talented, tastefully abnormal
+description: The personal portfolio website for Karina Kotyleva
+author: Karina Kotyleva
+
+social:
+  name: Karina Kotyleva
+  links:
+    - https://www.instagram.com/kkotyillustrations
 
 # technical options
 url: https://kkotyillustrations.com/
