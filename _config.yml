@@ -6,7 +6,7 @@ url: https://kkotyillustrations.com/
 baseurl:
 plugins:
   - jekyll-feed
+  - jekyll-seo-tag
 permalink: pretty
 sass:
   sourcemap: never
-theme: jekyll-theme-cayman
